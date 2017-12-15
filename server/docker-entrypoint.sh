@@ -86,9 +86,9 @@ if [ "$DB_VENDOR" != "h2" ]; then
     /bin/sh /opt/jboss/keycloak/bin/change-database.sh $DB_VENDOR
 fi
 
-if [ -Z "$JGROUPS_SETUP" ]; then
+if [ "$JGROUPS_SETUP" != "" ]; then
     echo "[KEYCLOAK DOCKER IMAGE] Using non-default JGroups setup $JGROUPS_SETUP"
-    /bin/sh /opt/jboss/keycloak/bin/change-jgroups.sh $JGROUPS_SETUP
+    /bin/sh /opt/jboss/keycloak/bin/change-jgroups.sh $JGROUPS_SETUP $databaseToInstall
 fi
 
 ##################
