@@ -87,7 +87,7 @@ if [ "$DB_VENDOR" != "h2" ]; then
 fi
 
 if [ "$JGROUPS_SETUP" != "" ]; then
-    echo "[KEYCLOAK DOCKER IMAGE] Using non-default JGroups setup $JGROUPS_SETUP"
+    echo "[KEYCLOAK DOCKER IMAGE] Using custom JGroups setup $JGROUPS_SETUP"
     /bin/sh /opt/jboss/keycloak/bin/change-jgroups.sh $JGROUPS_SETUP
 fi
 
